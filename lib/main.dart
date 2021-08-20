@@ -76,14 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   width: 10,
                 ),
-                Container(
-                  height: 60,
-                  child: OutlineButton(
-                    onPressed: _search,
-                    highlightColor: Colors.lightBlue,
-                    child: Text("Login"),
-                  ),
-                ),
               ]),
               SizedBox(
                 height: 10,
@@ -93,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: double.infinity,
                 child: OutlineButton(
                   color: Colors.blueGrey,
-                  onPressed: () => {},
+                  onPressed: _search,
                   highlightColor: Colors.lightBlue,
                   child: Text("View Accounts"),
                 ),
