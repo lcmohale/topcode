@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import '../pages/AccountDetails.dart';
 
 class AccSearchItemWidget extends StatelessWidget {
   final _entity;
@@ -9,17 +10,45 @@ class AccSearchItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(
-        _entity["name"],
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-        ),
+      title: Row(
+        children: [
+          Text(
+            'Account Name: ',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          Text(
+            _entity["name"],
+          )
+        ],
       ),
       subtitle: SingleChildScrollView(
-        child: Text((_entity['balance'] == null) ? "0.00" : _entity['balance'].toString()),
+        child: Row(
+          children: [
+            Text(
+              'Account Balance: ',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            Text(
+              (_entity['balance'] == null) ? "R 0.00" : "R " + _entity['balance'].toString(),
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            )
+          ],
+        ),
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AccountDetails()),
+        );
+      },
     );
   }
 }
