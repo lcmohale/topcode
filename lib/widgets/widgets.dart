@@ -46,7 +46,7 @@ class AccSearchItemWidget extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AccountDetails()),
+          MaterialPageRoute(builder: (context) => AccountDetails(account: _entity)),
         );
       },
     );
