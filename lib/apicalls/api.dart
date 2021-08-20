@@ -30,7 +30,7 @@ class AccSearchItemWidget extends StatelessWidget {
 
 class RequestService {
   static Future<AccSearchResponse> query(String search) async {
-    var response = await http.get("https://us-central1-momentumtest-bfdef.cloudfunctions.net/app/api/v1/account/$search");
+    var response = await http.get("https://us-central1-momentumtest-bfdef.cloudfunctions.net/app/api/v1/account/findByUserId?userId=$search");
     // Check if response is success
     if (response.statusCode >= 200 && response.statusCode < 300) {
       print('U made a request: for ${search} and result is ${response.body}');
