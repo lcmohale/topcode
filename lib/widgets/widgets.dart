@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import '../models/models.dart';
 
 class AccSearchItemWidget extends StatelessWidget {
   final _entity;
@@ -18,7 +17,7 @@ class AccSearchItemWidget extends StatelessWidget {
         ),
       ),
       subtitle: SingleChildScrollView(
-        child: Text(_entity["accountBalance"].toString()),
+        child: Text((_entity['balance'] == null) ? "0.00" : _entity['balance'].toString()),
       ),
       onTap: () {},
     );

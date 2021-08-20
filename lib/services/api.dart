@@ -7,6 +7,7 @@ class RequestService {
     // Check if response is success
     if (response.statusCode >= 200 && response.statusCode < 300) {
       var responseData = json.decode(response.body);
+      print(responseData);
       return responseData;
     } else {
       print("Query failed: ${search} ${response.body} (${response.statusCode})");
